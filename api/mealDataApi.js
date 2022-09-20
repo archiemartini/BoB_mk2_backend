@@ -1,6 +1,6 @@
 import axios from "axios";
 import dotenv from 'dotenv';
-import * as fs from 'fs'
+// import * as fs from 'fs'
 dotenv.config()
 
 
