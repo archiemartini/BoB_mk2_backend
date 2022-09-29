@@ -4,6 +4,6 @@ import { getMealData } from '../controllers/mealDataController.js'
 
 const router = express.Router()
 
-router.route('/').post(getMealData)
+router.route('/meals').post(getMealData)
 
 export default router

@@ -24,18 +24,9 @@ const fetchMealDataApi = (input = 'apples,flour,sugar', ranking = '1') => {
   const recipes = axios.request(options).then(function (response) {
     return(response.data);
   }).then().catch(function (error) {
-    console.error(error);
+    console.log(error);
   });
 
-  // const saveData = async (data) => {
-  //   await data; 
-  //   fs.writeFile('mealData.json', sData, (err) => {
-  //     if (err) {
-  //       throw err
-  //     }
-  //   })
-  // }
-  // saveData(recipes)
   return recipes
 }
 
