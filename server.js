@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv"
+import mongoose from 'mongoose'
+dotenv.config()
 
 // Import the routes
 import mealDataRoutes from './routes/mealData.route.js'
@@ -19,6 +22,12 @@ app.use('/', mealDataRoutes, selectedMealRoute)
 // app.use('/users')
 // app.use('/sessions')
 app.use('*', (req, res) => res.status(404).json({ error: "not found"}))
+
+
+mongoose.connect(
+  process.env.BRAINSONBRIOCHE_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(port, () => console.log(`Server running on port: ${port}`)))
+  .catch((error) => console.log(error.message));
 
 
 export default app;
