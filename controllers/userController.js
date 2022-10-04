@@ -1,19 +1,19 @@
 import User from '../models/user.js'
 
 export const registerUser = (req, res) => {
-  // const user = new User(req.body.userData);
+  const user = new User(req.body);
   console.log(req.body)
 
-  // user.save((err) => {
-  //     if (err) {
-  //       throw err
-  //     }
-  //     res.send({
-  //       _id: user._id,
-  //       userName: user.userName,
-  //       fridge: user.fridge
-  //     })
-  //   })
+  user.save((err) => {
+      if (err) {
+        throw err
+      }
+      res.send({
+        _id: user._id,
+        username: user.username,
+        fridge: user.fridge
+      })
+    })
 }
 
 export const AddFridgeItem = (req, res) => {

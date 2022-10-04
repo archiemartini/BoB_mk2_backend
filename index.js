@@ -27,9 +27,9 @@ app.use('*', (req, res) => res.status(404).json({ error: "not found"}))
 
 const port = process.env.PORT || 8000
 
-// mongoose.connect(
-//   process.env.BRAINSONBRIOCHE_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => app.listen(port, () => console.log(`Server running on port: ${port}`)))
-//   .catch((error) => console.log(error.message));
-app.listen(port, () => console.log(`Server running on port: ${port}`))
+mongoose.connect(
+  process.env.BRAINSONBRIOCHE_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(port, () => console.log(`Server running on port: ${port}`)))
+  .catch((error) => console.log(error.message));
+// app.listen(port, () => console.log(`Server running on port: ${port}`))
 
